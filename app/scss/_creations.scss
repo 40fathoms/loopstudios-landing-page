@@ -1,0 +1,265 @@
+.creations{
+
+    margin: auto;
+    margin-top: 5rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "grid"
+    "button";
+
+    @include breakpoint-up(large2){
+        
+        width: 70.1rem;
+        margin-top: 10rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "title button"
+        "grid grid";
+    }
+
+    &_title{
+
+        grid-area: title;
+
+        font-family: Josefin Sans;
+        font-weight: 300;
+        font-size: 1.6rem;
+        text-align: center;
+        margin: 0;
+
+        @include breakpoint-up(medium){
+            font-size: 2rem;
+        }
+
+        @include breakpoint-up(large2){
+            font-size: 3.1875rem;
+            text-align: start;
+        }
+    }
+
+    &_seeAll{
+
+        grid-area: button;
+        justify-self: center;
+        align-self: center;
+
+        display: flex;
+
+        border: 1px solid $black;
+        width: 9.25rem;
+        height: 2.125rem;
+        margin: 0;
+
+        @include breakpoint-up(large2){
+            justify-self: end;
+        }
+
+        transition: all 300ms ease-in-out;
+        &:hover{
+            cursor: pointer;
+            background-color: $black;
+
+            a{
+                color: $white;
+            }
+        }
+
+        a{
+            font-family: Alata;
+            color: $black;
+            align-self: center;
+            margin: auto;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+    }
+
+    &_grid{
+
+        grid-area: grid;
+        margin: 2rem 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        @include breakpoint-up(large2){
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);           
+        }
+
+        &_item{
+
+            width: 100%;
+            height: 29.8vw;
+            border: 1px solid black;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            margin: auto;
+
+            @include breakpoint-down(small){
+                max-width: 25.93rem;
+                max-height: 9.125rem;
+            }
+
+            @include breakpoint-up(medium){
+                width: 16.0625rem;
+                height: 28.125rem;
+
+                &:hover{
+                    cursor: pointer;
+
+                    h3{
+                        color: $black;
+                        z-index: 4;
+                    }
+                    
+                    .creations_grid_item_hover{
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &_hover{
+                position: absolute;
+                width: 16.0625rem;
+                height: 28.125rem;
+                background: rgba($white, 0.4);
+                z-index: 3;
+                visibility: hidden;
+            }
+            
+
+            h3{
+                font-family: Josefin Sans;
+                font-weight: 300;
+                font-size: 1.3rem;
+                color: $white;
+
+                width: 8rem;
+
+                justify-self: start;
+                align-self: end;
+
+                padding-left: 1.1rem;
+                transition: all 300ms ease-in-out;
+
+                @include breakpoint-up(large2){
+                    font-size: 2rem;
+                    padding-left: 2rem;
+                    width: 100%;
+                }
+            }
+
+            &.one{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-deep-earth.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-deep-earth.jpg');
+                }
+            }
+
+            &.two{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-night-arcade.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-night-arcade.jpg');
+                }
+            }
+
+            &.three{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-soccer-team.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-soccer-team.jpg');
+                }
+            }
+
+            &.four{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-grid.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-grid.jpg');
+                }
+
+                h3{
+                    width: 6rem;
+                }
+            }
+
+            &.five{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-from-above.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-from-above.jpg');
+                }
+            }
+
+            &.six{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-pocket-borealis.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-pocket-borealis.jpg');
+                }
+            }
+
+            &.seven{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-curiosity.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-curiosity.jpg');
+                }
+            }
+
+            &.eight{
+                background: linear-gradient(to right, rgba($black, 0.7), transparent),
+                url('../images/mobile/image-fisheye.jpg');
+                background-size: cover;
+                background-position: center center;
+
+                @include breakpoint-up(medium){
+                    background: linear-gradient(to top, rgba($black, 0.7), transparent),
+                    url('../images/desktop/image-fisheye.jpg');
+                }
+            }
+        }
+    }
+}
+
+
+

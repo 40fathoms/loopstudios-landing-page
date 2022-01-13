@@ -1,0 +1,75 @@
+.hero{
+    
+    margin: 0 0;
+    
+    transform: translateY(-5rem);
+    height: 100vh;
+
+    background-image: url('../images/mobile/image-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 80% center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint-up(medium){
+        transform: translateY(-5.5rem);
+
+        background: 
+        linear-gradient(to left,
+        rgba($black, 0.3),
+        rgba($black, 0.3)),
+        url('../images/desktop/image-hero.jpg');
+
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        justify-content: start;
+        padding-left: 1.3rem;
+    }
+
+    @include breakpoint-up(large){
+        padding-left: 9.3rem;
+    }
+    
+    &_slogan{
+        color: $white;
+        font-family: Josefin Sans;
+        border: solid 2px $white;
+        font-size: 1.9rem;
+        
+
+        width: 15.1875rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+
+        padding: 1rem;
+
+        @include breakpoint-up(medium){
+            font-size: 3.525rem;
+        
+
+            width: 30rem;
+            height: 14rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+
+            padding: 2.1rem;
+        }
+
+        @include breakpoint-up(large){
+            font-size: 4.525rem;
+        
+ 
+            width: 39rem;
+            height: 16.875rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+
+            padding: 2.1rem;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.footer{
+
+    margin-top: 6rem;
+    background: $black;
+
+    width: 100%;
+    height: 100%;
+
+    &_content{
+        text-align: center;
+        margin: 0 auto;
+        padding: 3rem 0;
+    
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "links"
+        "socials"
+        "copyright";
+    
+        @include breakpoint-up(large2){
+            width: 70.1rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+            "logo socials"
+            "links copyright";
+        }
+    }
+
+    &_logo{
+        grid-area: logo;
+        img{
+            width: 11.5rem;
+            height: 1.9375rem;
+
+            @include breakpoint-down(medium){
+                width: 9.3125rem;
+                height: 1.625rem;
+            }
+        }
+
+        @include breakpoint-up(large2){
+            justify-self: start;
+        }
+    }
+
+    &_links{
+        grid-area: links;
+        
+        @include breakpoint-down(medium){
+            margin: 2rem 0;
+        }
+
+        @include breakpoint-up(large2){
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        
+        a{
+            display: block;
+            color: $white;
+            font-family: Alata;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 300ms ease-in-out;
+
+            @include breakpoint-up(large2){
+                justify-self: start;
+                &:hover{
+                    border-bottom: 2px solid $white;
+                }
+            }
+        }
+
+    }
+
+    &_socials{
+        grid-area: socials;
+        width: 12rem;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-around;
+
+        @include breakpoint-up(large2){
+            justify-self: end;
+            margin: 0 0;
+        }
+
+        a{
+            color: $white;
+            padding: 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: all 300ms ease-in-out;
+
+            @include breakpoint-up(large2){
+                &:hover{
+                    border-bottom: 2px solid $white;
+                }
+            }
+        }
+    }
+
+    &_copyright{
+        grid-area: copyright;
+        color: $darkGray;
+        font-family: Alata;
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+
+        @include breakpoint-up(large2){
+            justify-self: end;
+            padding: 0;
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.navbar{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    margin-top: 2.5375rem;
+    margin-left: 1.575rem;
+    margin-right: 1.575rem;
+
+    @include breakpoint-up(large){
+        margin-top: 3.3375rem;
+        margin-left: 9.81875rem;
+        margin-right: 9.81875rem;
+    }
+
+    &_logo{
+
+        z-index: 1;
+
+        img{
+            width: 11.5rem;
+            height: 1.9375rem;
+
+            @include breakpoint-down(medium){
+                width: 9.3125rem;
+                height: 1.625rem;
+            }
+        }
+    }
+
+    &_menu{
+        z-index: 1;
+
+        img{
+            width: 1.875rem;
+            height: 1.3125rem;
+
+            @include breakpoint-down(medium){
+                width: 1.5rem;
+                height: 1rem;
+            }
+        }   
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &_links{
+
+        &_desktop{
+            @include breakpoint-down(medium){
+                display: none;
+            }
+
+            display: flex;
+            gap: 1.875rem;
+            
+
+            a{
+                z-index: 1;
+                color: $white;
+                font-family: Alata;
+                font-size: 1rem;
+                padding-bottom: 0.6rem;
+                border-bottom: 2px solid transparent;
+                transition: all 300ms ease-in-out;
+
+                &:hover{
+                    border-bottom: 2px solid $white;
+                }
+            }
+        }
+    }
+
+    &_mobile{
+
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100vh;
+        background-color: $black;
+        
+        &.open{
+            display: block;
+        }
+
+        &_header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            
+
+            margin-top: 2.5375rem;
+            margin-left: 1.575rem;
+            margin-right: 1.575rem;
+        }
+
+        &_logo{
+            img{
+                width: 9.3125rem;
+                height: 1.625rem;
+            }      
+        }
+
+        &_menu{
+
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+            }   
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        &_links{
+            
+            margin-left: 1.575rem;
+            margin-top: 7.75rem;
+
+            a{
+                color: $white;
+                font-family: Josefin Sans;
+                font-size: 1.1875rem;
+                display: block;       
+
+                &:not(:last-child){
+                    margin-bottom: 1.6rem;
+                }
+            }
+        }
+    }
+}
